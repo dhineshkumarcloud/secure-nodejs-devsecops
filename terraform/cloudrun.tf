@@ -68,7 +68,7 @@ resource "google_cloud_run_v2_service" "nodejs_api" {
       }
 
       startup_probe {
-        timeout_seconds   = 60
+        timeout_seconds   = 10
         period_seconds    = 30
         failure_threshold = 3
 
