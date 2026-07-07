@@ -23,3 +23,7 @@ variable "cloud_run_service_name" {
 variable "artifact_repo_name" {
   type = string
 }
+variable "notification_channel_id" {
+  description = "Cloud Monitoring notification channel ID"
+  type        = string
+}
