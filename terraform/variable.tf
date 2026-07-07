@@ -8,11 +8,6 @@ variable "region" {
   type        = string
 }
 
-variable "zone" {
-  description = "Deployment Zone"
-  type        = string
-}
-
 variable "db_name" {
   type = string
 }
