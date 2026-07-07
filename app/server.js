@@ -18,7 +18,7 @@ app.listen(PORT, async () => {
     } catch (err) {
 
         console.log("Database connection will be established in Cloud Run.");
-
+        console.error(err.message);
     }
 
 });
