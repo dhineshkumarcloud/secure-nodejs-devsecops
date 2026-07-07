@@ -1,0 +1,52 @@
+name: CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.SERVICE_ACCOUNT }}
+
+      - name: Setup Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Configure Docker
+        run: |
+          gcloud auth configure-docker asia-south1-docker.pkg.dev --quiet
+
+      - name: Build Docker Image
+        run: |
+          docker build \
+            -t asia-south1-docker.pkg.dev/certain-math-466706-r2/nodejs-repo/nodejs-api:${{ github.sha }} \
+            ./app
+
+      - name: Push Docker Image
+        run: |
+          docker push \
+            asia-south1-docker.pkg.dev/certain-math-466706-r2/nodejs-repo/nodejs-api:${{ github.sha }}
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy nodejs-api \
+            --image asia-south1-docker.pkg.dev/certain-math-466706-r2/nodejs-repo/nodejs-api:${{ github.sha }} \
+            --region asia-south1 \
+            --platform managed \
+            --quiet
