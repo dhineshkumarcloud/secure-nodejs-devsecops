@@ -552,6 +552,28 @@ The following validations were completed during implementation.
 
 ---
 
+## Application Validation
+
+The application was successfully deployed to Google Cloud Run and verified using the health endpoint.
+
+### Health Endpoint
+
+URL:
+
+```text
+https://nodejs-api-605603168786.asia-south1.run.app/health
+```
+
+Response:
+
+```json
+{
+  "status": "Healthy"
+}
+```
+
+![Application Health](Screenshots/application-health.png)
+
 # Monitoring and Alerting
 
 Cloud Monitoring is configured to provide operational visibility into the deployed application.
