@@ -566,18 +566,59 @@ Monitoring helps identify application failures and operational issues quickly.
 
 The following screenshots are included with the project submission.
 
-| Screenshot        | Description                    |
-| ----------------- | ------------------------------ |
-| GitHub Repository | Project source code            |
-| CI Pipeline       | Successful CI workflow         |
-| CD Pipeline       | Successful deployment workflow |
-| Cloud Run         | Running application            |
-| Cloud SQL         | Database instance              |
-| Artifact Registry | Docker images                  |
-| Secret Manager    | Stored secrets                 |
-| VPC Network       | Network configuration          |
-| Monitoring        | Alert policies                 |
-| Logs-Based Metric | Custom logging metric          |
+# Screenshots
+
+## Solution Architecture
+
+![Architecture](architecture/architecture-diagram.png)
+
+---
+
+## CI Pipeline
+
+![CI Pipeline](screenshots/01-ci-pipeline-success.png)
+
+---
+
+## CD Pipeline
+
+![CD Pipeline](screenshots/02-cd-pipeline-success.png)
+
+---
+
+## Artifact Registry
+
+![Artifact Registry](screenshots/03-artifact-registry.png)
+
+---
+
+## Cloud Run Deployment
+
+![Cloud Run](screenshots/04-cloud-run-service.png)
+
+---
+
+## Cloud SQL Instance
+
+![Cloud SQL](screenshots/05-cloud-sql-instance.png)
+
+---
+
+## Secret Manager
+
+![Secret Manager](screenshots/06-secret-manager.png)
+
+---
+
+## Logs-Based Metric
+
+![Logs Metric](screenshots/07-logs-based-metric.png)
+
+---
+
+## Monitoring Alert Policy
+
+![Monitoring](screenshots/08-monitoring-alert-policy.png)
 
 ---
 
