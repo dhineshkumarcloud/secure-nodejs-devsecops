@@ -19,6 +19,11 @@ This project follows DevSecOps best practices, including:
 
 ---
 
+## Repository
+
+**GitHub Repository:**  
+https://github.com/dhineshkumarcloud/secure-nodejs-devsecops
+
 ## Assignment Objectives
 
 - Develop a containerized Node.js REST API.
@@ -603,6 +608,12 @@ The following screenshots are included with the project submission.
 ![Cloud SQL](screenshots/05-cloud-sql-instance.png)
 
 ---
+
+## VPC Network & Subnet
+
+The Cloud Run service connects to Cloud SQL securely using a Serverless VPC Access Connector over a private network.
+
+![VPC Network](screenshots/09-vpc-network-subnet.png)
 
 ## Secret Manager
 
